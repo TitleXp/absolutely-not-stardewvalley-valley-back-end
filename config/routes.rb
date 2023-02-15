@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   #   namespace :v1 do
       resources :products
       resources :farms
+      # resources :sessions
 
       get '/fruits', to: 'products#fruits'
       get '/vegetables', to: 'products#vegetables'
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
       post '/login', to: 'sessions#login'
       delete '/logout', to: 'sessions#logout'
 
-
+      get '/authorized', to: 'users#show'
   #   end
   # end
 end

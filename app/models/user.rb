@@ -5,5 +5,6 @@ class User < ApplicationRecord
     has_many :products, through: :purchases
 
     validates :role, inclusion: {in: %w(farmer buyer)}
+    validates :email, :username, uniqueness: true
 
 end
