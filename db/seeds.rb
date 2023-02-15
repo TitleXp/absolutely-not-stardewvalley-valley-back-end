@@ -24,6 +24,28 @@ p8 = Product.create(farm_id: f5.id, name: "Asparagus", category: "vegetable", de
 p9 = Product.create(farm_id: f4.id, name: "Carrots", category: "vegetable", description: "Don't let the rabbits eat them all, order our carrots today!", picture_link: "https://i.imgur.com/5K2WvTb.png", price: 2, stock: 1439)
 p10 = Product.create(farm_id: f2.id, name: "Bell Peppers", category: "vegetable", description: "Red, green, yellow or orange - they're all delicious.", picture_link: "https://i.imgur.com/w7gEPWa.png", price: 3, stock: 967)
 
+puts "Creating users .."
+
+u1 = User.create(username: "Jake J", role: "farmer", email: "JJ@gmail.com", password: "12345")
+u2 = User.create(username: "Fiyah F", role: "buyer", email: "FF@gmail.com", password: "12345")
+u3 = User.create(username: "Title T", role: "farmer", email: "TT@gmail.com", password: "12345")
+u4 = User.create(username: "Hong H", role: "buyer", email: "HH@gmail.com", password: "12345")
+
+
+puts "Creating purchases .."
+
+p1 = Purchase.create(user_id: u2.id, product_id: p1.id)
+p2 = Purchase.create(user_id: u2.id, product_id: p1.id)
+p3 = Purchase.create(user_id: u2.id, product_id: p2.id)
+p4 = Purchase.create(user_id: u2.id, product_id: p3.id)
+p5 = Purchase.create(user_id: u2.id, product_id: p4.id)
+
+
+p6 = Purchase.create(user_id: u4.id, product_id: p1.id)
+p7 = Purchase.create(user_id: u4.id, product_id: p1.id)
+p8 = Purchase.create(user_id: u4.id, product_id: p5.id)
+p9 = Purchase.create(user_id: u4.id, product_id: p6.id)
+p10 = Purchase.create(user_id: u4.id, product_id: p7.id)
 
 
 puts "Seeding done !"

@@ -1,8 +1,18 @@
 Rails.application.routes.draw do
-  resources :products
-  resources :farms
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  # resources :purchases
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # namespace :api do
+  #   namespace :v1 do
+      resources :products
+      resources :farms
+
+      get '/fruits', to: 'products#fruits'
+      get '/vegetables', to: 'products#vegetables'
+
+      post '/login', to: 'sessions#login'
+      delete '/logout', to: 'sessions#logout'
+
+
+  #   end
+  # end
 end

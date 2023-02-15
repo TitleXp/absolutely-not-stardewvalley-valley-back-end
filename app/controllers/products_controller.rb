@@ -25,6 +25,16 @@ class ProductsController < ApplicationController
         head :no_content
     end
 
+    def fruits
+        fruits = Product.all.where(category: "fruit")
+        render json: fruits, status: :ok
+    end
+
+    def vegetables
+        vegetables = Product.all.where(category: "vegetable")
+        render json: vegetables, status: :ok
+    end
+
     private
 
     def find_product
