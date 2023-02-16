@@ -11,9 +11,10 @@ Rails.application.routes.draw do
       get '/vegetables', to: 'products#vegetables'
 
       post '/login', to: 'sessions#login'
-      delete '/logout', to: 'sessions#logout'
+      destroy '/logout', to: 'sessions#logout'
 
       get '/authorized', to: 'users#show'
+      get '/user', to: 'users#find_user'
   #   end
   # end
 end

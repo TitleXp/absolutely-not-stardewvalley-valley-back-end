@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
             
         else
             render json: {error: "Invalid Credentials"}, status: 401
-            byebug
+            # byebug
         end
     end
 
