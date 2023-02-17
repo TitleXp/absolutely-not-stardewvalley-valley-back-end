@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 
     def find_user
         find_user = User.find_by(id: session[:user_id]) 
+        render json: find_user, status: :ok
 
         # @user ||= User.find_by(id: session[:user_id]) if session[:user_id]
 
